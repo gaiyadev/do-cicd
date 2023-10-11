@@ -16,6 +16,11 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Create .ssh directory and known_hosts file
+      run: |
+        mkdir -p ~/.ssh
+        touch ~/.ssh/known_hosts
+
     - name: Add server to known hosts
       run: ssh-keyscan 143.198.0.200 >> ~/.ssh/known_hosts
 
