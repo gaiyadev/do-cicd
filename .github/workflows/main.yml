@@ -16,6 +16,9 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Add server to known hosts
+      run: ssh-keyscan 143.198.0.200 >> ~/.ssh/known_hosts
+
     - name: Deploy to server
       run: |
         ssh root@143.198.0.200 'cd do-cicd && git pull origin main && npm install && npm start'
