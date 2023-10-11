@@ -1,9 +1,9 @@
-name: Authentication Service
+name: Cicd Service
 
 on:
   push:
     branches:
-      - dev  
+      - main  
 
 jobs:
   build:
