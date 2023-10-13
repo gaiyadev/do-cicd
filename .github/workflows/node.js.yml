@@ -26,5 +26,5 @@ jobs:
       # Your other build and test steps go here
     - run: |
         # Restart the Node.js application managed by PM2
-        pm2 restart do-cicd
+        pm2 restart do-cicd/do-cicd/app.js
       working-directory: /root/actions-runner/_work
