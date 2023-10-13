@@ -9,11 +9,11 @@ on:
 jobs:
   build:
 
-    runs-on:  [self-hosted]
+    runs-on: [self-hosted]
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [18.x] # Use the appropriate Node.js version
 
     steps:
     - uses: actions/checkout@v2
@@ -26,5 +26,6 @@ jobs:
       # Your other build and test steps go here
     - run: |
         # Restart the Node.js application managed by PM2
-        pm2 restart /do-cicd/do-cicd/app.js
+        pm2 restart /root/actions-runner/_work/do-cicd/do-cicd/app.js --name do-cicd --update-env
       working-directory: /root/actions-runner/_work
+
